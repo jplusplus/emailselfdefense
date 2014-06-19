@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="utf-8">
+			
+			<title>Email Self-Defense - a guide to fighting surveillance with GnuPG</title>
+			<meta name="keywords" content="GnuPG, GPG, privacy, email, Enigmail" />
+      <meta name="description" content="Email surveillance violates our fundamental rights and makes free speech risky. This guide will teach you email self-defense in 30 minutes with GnuPG.">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="static/css/main.css">
+  		<link rel="shortcut icon" href="static/img/favicon.ico" />
+
+	</head>
+	<body>
+<!--
+		<nav class="nav">
+			<div>
+				<ul class="lang">
+					<li class="help"><a href="http://libreplanet.org/wiki/GPG_guide">Translate this guide!</a></li>
+				</ul>
+			</div>
+		</nav>
+-->
+
+<!-- ~~~~~~~~~ GnuPG Header and introduction text  ~~~~~~~~~ -->
+		<header class="row"  id="header">
+			<div>
+				<h1>Email Self-Defense</h1>
+				<ul class="os">
+					<li><a href="index.html">GNU/Linux</a></li>
+					<li><a href="mac.html" class="current">Mac OS</a></li>
+					<li><a href="windows.html">Windows</a></li>
+					<li class="share"><a href="https://fsf.org/twitter">#EmailSelfDefense</a></li>
+				</ul>
+
+				<!-- ~~~~~~~~~ FSF Introduction ~~~~~~~~~ -->
+				<div id="fsf-intro">
+					<h3><a href="http://u.fsf.org/ys"><img alt="Free Software Foundation" src="static/img/fsf-logo.png"></a></h3>
+					<p>Email Self-Defense is a project of the Free Software Foundation. We fight for computer user's rights, and promote the development of free (as in freedom) software like GnuPG.</p><p>We have big plans to get this guide in the hands of people under bulk surveillance all over the world, and to make more tools like it. Can you make a donation to help us achieve that goal?</p>
+
+					<!--<p><a href="https://u.fsf.org/yr"><img alt="Join now" src="static/img/join.en.png"></a></p>-->
+					<p><a href="https://u.fsf.org/7w"><img alt="Donate" src="static/img/donate.en.png"></a></p>
+					<div class="newsletter">
+						<h5>Sign up</h5>
+						<p>Enter your email address to receive our monthly newsletter, the <a href="https://www.fsf.org/free-software-supporter/">Free Software Supporter</a></p>
+						<form method="post" action="https://crm.fsf.org/civicrm/profile/create&amp;reset=1&amp;gid=31">
+							<input type="text" placeholder="Type your email..." name="email-Primary" id="frmEmail"><input type="submit" value="Subscribe me" name="_qf_Edit_next">
+							<div>
+								<input type="hidden" value="" name="postURL"><input type="hidden" value="1" name="group[25]"><input type="hidden" value="https://crm.fsf.org/civicrm/profile?reset=1&amp;gid=31" name="cancelURL"><input type="hidden" value="Edit:cancel" name="_qf_default">
+							</div>
+						</form>
+						<p><small>Read our <a href="https://my.fsf.org/donate/privacypolicy.html">Privacy Policy</a></small></p>
+					</div><!-- End .newsletter -->
+				</div><!-- End #fsf-intro -->
+
+				<!-- ~~~~~~~~~ Guide Introduction ~~~~~~~~~ -->
+				<div class="intro">
+					<p>
+						<a id="infographic" href="infographic.html"><img src="static/img/infographic-button.png" alt="View &amp; share our infographic &rarr;" /></a>
+						Bulk surveillance violates our fundamental rights and makes free speech risky. This guide will teach you a basic surveillance self-defense skill: email encryption. Once you've finished, you'll be able to send and receive emails that are coded to make sure that a surveillance agent or thief can't intercept your email and read it.</p>
+
+<p>Even if you have nothing to hide, using encryption helps protect the privacy of people you communicate with, and makes life difficult for bulk surveillance systems. If you do have something important to hide, you're in good company; these are the same tools that Edward Snowden used to share his famous secrets about the NSA.</p>
+
+					<!--<p>You'll also be able to sign emails to show reliably that they are from you. Though the need for signing may be less obvious, you'll actually do it more often.</p>-->
+
+					<p class="notes">This guide relies on software which is freely licensed; it's completely transparent and anyone can copy it or make their own version. This makes it safer from surveillance than proprietary software (like Mac OS). To be as safe as possible from surveillance, we recommend you switch to a free software operating system like GNU/Linux. Learn more about free software at <a href="https://u.fsf.org/ys">fsf.org</a>.</p>
+
+<p>Let's get started!</p>
+
+				</div>
+				
+			</div>
+		</header><!-- End #header -->
+
+<!-- ~~~~~~~~~ Section 1: Get the pieces  ~~~~~~~~~ -->
+		<section class="row" id="section1">
+			<div>
+					<!-- ~~~~~~~~~ section introduction: interspersed text  ~~~~~~~~~ -->
+				<div class="section-intro">
+						<h2><em>#1</em> Get the pieces</h2>
+						<p>All you need to start is a computer with an Internet connection, an email account and about half an hour. You can use your existing email account for this without affecting it.</p>
+						<p>To get started, you'll need a desktop email program installed on your computer. This guide works with <a href="http://www.fossamail.org">FossaMail</a> and Thunderbird (FossaMail only works on 32-bit Windows computers). Email programs are another way to access the same email accounts you can access in a browser (like GMail), but provide extra features.</p>
+						<p>If you are already have one of these, you can skip to <a href="#step-1b">Step 1.b</a>.</p>
+				</div><!-- End .section-intro -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-1a" class="step">
+					<div class="sidebar">
+						<p><img src="static/img/screenshots/step1a-install-wizard.png" alt="Step 1.A: Install Wizard" /></p>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3><em>Step 1.a</em> Set your email program up with your email account (if it isn't already)</h3>
+						<p>Open your email program and follow the wizard that sets it up with your email account.</p>
+					
+						<!-- ~~~~~~~~~ Troubleshooting  ~~~~~~~~~ -->
+						<div class="troubleshooting">
+							<h4>Troubleshooting</h4>
+							<dl>
+								<dt>What's a wizard?</dt>
+									<dd>A wizard is a series of windows that pop up to make it easy to get something done on a computer, like installing a program. You click through it, selecting options as you go.</dd>
+								<dt>My email program can't find my account or isn't downloading my mail</dt>
+									<dd>Before searching the Web, we recommend you start by asking other people who use your email system, to figure out the correct settings.</dd>
+								<dt class="feedback">Don't see a solution to your problem?</dt>
+									<dd class="feedback">Please let us know on the <a href="https://libreplanet.org/wiki/GPG_guide/Public_Review">feedback page</a>.</dd>
+							</dl>
+						</div><!-- /.troubleshooting -->
+
+					</div><!-- End .main -->
+				</div><!-- End #step1-a .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-1b" class="step">
+					<div class="sidebar">
+						<ul class="images">
+							<li><img src="static/img/screenshots/step1b-01-tools-addons.png" alt="Step 1.B: Tools -> Add-ons" /></li>
+							<li><img src="static/img/screenshots/step1b-02-search.png" alt="Step 1.B: Search Add-ons" /></li>
+							<li><img src="static/img/screenshots/step1b-03-install.png" alt="Step 1.B: Install Add-ons" /></li>
+						</ul>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3><em>Step 1.b</em> Install the Enigmail plugin for your email program</h3>
+						<p>In your email program's menu, select Add-ons (it may be in the Tools section). Make sure Extensions is selected on the left. Do you see Enigmail? if so, skip this step.</p>
+						<p>If not, search "Enigmail" with the search bar in the upper right. You can take it from here. Restart your email program when you're done.</p>
+						<!-- ~~~~~~~~~ Troubleshooting  ~~~~~~~~~ -->
+						<div class="troubleshooting">
+							<h4>Troubleshooting</h4>
+							<dl>
+								<dt>I can't find the menu.</dt>
+									<dd>In many new email programs, the main menu is represented by an image of three stacked horizontal bars.</dd>
+
+								<dt class="feedback">Don't see a solution to your problem?</dt>
+									<dd class="feedback">Please let us know on the <a href="https://libreplanet.org/wiki/GPG_guide/Public_Review">feedback page</a>.</dd>
+							</dl>
+						</div><!-- /.troubleshooting -->
+					</div><!-- End .main -->
+				</div><!-- End #step-1b .step -->
+			</div>
+		</section><!-- End #section1 -->
+
+<!-- ~~~~~~~~~ Section 2: Make your keys  ~~~~~~~~~ -->
+		<section class="row" id="section2">
+			<div>
+					<!-- ~~~~~~~~~ section introduction: interspersed text  ~~~~~~~~~ -->
+				<div class="section-intro">
+					<h2><em>#2</em> Make your keys</h2>
+						<p>To use the GnuPG system, you'll need a public key and a private key (known together as a keypair). Each is a long string of randomly generated numbers that are unique to you. Your public and private keys are linked together by a special mathematical function.</p>
+
+<p>Your public key isn't like a physical key, because it's stored in the open in an online directory called a keyserver. People download it and use it, along with GnuPG, to encrypt emails they send to you. You can think of the keyserver as phonebook, where people who want to send you an encrypted email look up your public key.</p>
+
+<p>Your private key is more like a physical key, because you keep it to yourself (on your computer). You use GnuPG and your private key to decode encrypted emails other people send to you.</p>
+				</div><!-- End .section-intro -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-2a" class="step">
+					<div class="sidebar">
+						<p><img src="static/img/screenshots/step2a-01-make-keypair.png" alt="Step 2.A: Make a Keypair" /></p>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3><em>Step 2.a</em> Make a keypair</h3>
+						<p>In your email program's menu, select OpenPGP &rarr; Setup Wizard. You don't need to read the text in the window that pops up unless you'd like to, but it's good to read the text on the later screens of the wizard.</p>
+						<p>On the second screen, titled "Signing," select "No, I want to create per-recipient rules for emails that need to be signed."</p>
+						<p>Use the default options until you reach the screen titled "Create Key".</p>
+						<p>On the screen titled "Create Key," pick a strong password! Your password should be at least 12 characters and include at least one lower case and upper case letter and at least one number or punctuation symbol. Don't forget the password, or all this work will be wasted!</p>
+		  			<p class="notes">The program will take a little while to finish the next step, the "Key Creation" screen. While you wait, do something else with your computer, like watching a movie or browsing the Web. The more you use the computer at this point, the faster the key creation will go.</p>
+						<p>When the OpenPGP Confirm screen pops up, select Generate Certificate and choose to save it in a safe place on your computer (we recommend making a folder called "Revocation Certificate" in your home folder and keeping it there. You'll learn more about the revocation certificate in <a href="#section5">Section 5</a>. The setup wizard will ask you to move it onto an external device, but that isn't necessary at this moment.</p>
+						<p class="notes">After creating your key, the Enigmail set-up wizard automatically uploaded it to a keyserver, an online computer that makes everyone's keys available through the Internet.</p>
+
+						<!-- ~~~~~~~~~ Troubleshooting  ~~~~~~~~~ -->
+						<div class="troubleshooting">
+							<h4>Troubleshooting</h4>
+							<dl>
+								<dt>I can't find the OpenPGP menu.</dt>
+									<dd>In many new email programs, the main menu is represented by an image of three stacked horizontal bars. OpenPGP may be inside a section called Tools.</dd>
+    <dt>The wizard says that it cannot find GnuPG.</dt>
+
+                                         <dd>Open whatever program you usually use for installing  software, and search for GnuPG, then install it. Then restart the  Engimail setup wizard by going to OpenPGP &rarr; Setup Wizard.</dd>
+    <dt>What does OpenPGP mean?</dt>
+
+                                         <dd>OpenPGP is a protocol that GnuPG uses, just like HTTP is a protocol for the Web. It's a slightly confusing name that Enigmail uses for its menus.</dd>
+								<dt class="feedback">Don't see a solution to your problem?</dt>
+									<dd class="feedback">Please let us know on the <a href="https://libreplanet.org/wiki/GPG_guide/Public_Review">feedback page</a>.</dd>
+							</dl>
+						</div><!-- /.troubleshooting -->
+					</div><!-- End .main -->
+				</div><!-- End #step-2a .step  -->
+				<div id="step-2b" class="step">
+					<div class="main">
+						<h3><em>Step 2.b</em> Upload your public key to a keyserver</h3>
+						<p>In your email program's menu, select OpenPGP &rarr; Key Management.</p>
+<p>Right click on your key and select Upload Public Keys to Keyserver. Use the default keyserver in the popup.</p>
+<p class="notes">Now someone who wants to send you an encrypted message can download your public key from the Internet.</b>
+						<!-- ~~~~~~~~~ Troubleshooting  ~~~~~~~~~ -->
+						<div class="troubleshooting">
+							<h4>Troubleshooting</h4>
+							<dl>
+								<dt>The progress bar never finishes</dt>
+										<dd>Close the upload popup, make sure you are on the Internet and try again. If that doesn't work, try again, selecting a different keyserver.</dd>
+
+								<dt class="feedback">Don't see a solution to your problem?</dt>
+									<dd class="feedback">Please let us know on the <a href="https://libreplanet.org/wiki/GPG_guide/Public_Review">feedback page</a>.</dd>
+
+							</dl>
+						</div><!-- /.troubleshooting -->
+
+
+
+					</div><!-- End .main -->
+				</div><!-- End #step-2a .step  -->
+
+			</div>
+		</section><!-- End #section2 -->
+
+<!-- ~~~~~~~~~ Section 3: Try it out  ~~~~~~~~~ -->
+		<section class="row" id="section3">
+			<div>
+					<!-- ~~~~~~~~~ section introduction: interspersed text  ~~~~~~~~~ -->
+				<div class="section-intro">
+						<h2><em>#3</em> Try it out!</h2>
+						<p>Now you'll try a test correspondence with a computer program named Adele, which knows how to use encryption.</p>
+				</div><!-- End .section-intro -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-3a" class="step">
+					<div class="sidebar">
+						<p><img src="static/img/screenshots/section3-try-it-out.png" alt="Try it out." /></p>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3><em>Step 3.a</em> Send Adele your public key</h3>
+						<p>This is a special step that you won't have to do when corresponding with real people. In your email program's menu, go to OpenPGP &rarr; Key Management. You should see your key in the list that pops up. Right click on your key and select Send Public Keys by Email. This will create a new draft message, as if you had just hit the Write button.</p>
+
+<p>Put at least one word (whatever you want) in the subject and body of the email, then hit send.</p>
+
+<p class="notes">It may take two or three minutes for Adele to respond. In the meantime, you might want to skip ahead and check out the <a href="#section5">Use it Well</a> section of this guide. Once she's responded, head to the next step. From here one, you'll be doing just the same thing as when corresponding with a real person.</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-3b .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-3b" class="step">
+					<div class="main">
+							<h3><em>Step 3.b</em> Send a test encrypted email</h3>
+							<p>Write a new email in your email program, addressed to adele-en@gnupp.de. Make the subject "Encryption test" or something similar and write something in the body. Don't send it yet.</p>
+							<p>Click the icon of the key in the bottom right of the composition window (it should turn yellow). This tells Enigmail to encrypt the email with the key you downloaded in the last step.</p>
+							<p>Click Send. Enigmail will pop up a window that says "Recipients not valid, not trusted or not found."</p>
+
+							<p>To encrypt and email to Adele, you need her public key, and so now you'll have Enigmail download it from a keyserver. Click Download Missing Keys and use the default in the pop-up that asks you to choose a keyserver. Once it finds keys, check the first one (Key ID starting with 9), then select ok. Select ok in the next pop-up.</p>
+
+							<p>Now you are back at the "Recipients not valid, not trusted or not found" screen. Select Adele's key from the list and click Ok. If the message doesn't send automatically, you can hit send now.</p>
+					<!-- ~~~~~~~~~ Troubleshooting  ~~~~~~~~~ -->
+							<div class="troubleshooting">
+								<h4>Troubleshooting</h4>
+								<dl>
+									<dt>Enigmail can't find Adele's key</dt>
+										<dd>Close the pop-ups that have appeared since you clicked. Make sure you are connected to the Internet and try again. If that doesn't work, repeat the process, choosing a different keyserver when it asks you to pick one.</dd>
+								<dt class="feedback">Don't see a solution to your problem?</dt>
+									<dd class="feedback">Please let us know on the <a href="https://libreplanet.org/wiki/GPG_guide/Public_Review">feedback page</a>.</dd>
+								</dl>
+							</div><!-- /.troubleshooting -->
+						</div><!-- End .main -->
+					</div><!-- End #step-3b .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-headers_unencrypted" class="step">
+					<div class="main">
+						<h3><em>Important:</em> Subject lines are not encrypted</h3>
+						<p>Even if you encrypted your email, the subject line is not encrypted, so don't put private information there. The sending and receiving addresses aren't encrypted either, so they could be read by a surveillance system.</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-headers_unencrypted .step-->
+
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-3c" class="step">
+					<div class="main">
+						<h3><em>Step 3.c</em> Receive a response</h3>
+						<p>When Adele receives your email, she will use her private key to decrypt it, then fetch your public key from a keyserver and use it to encrypt a response to you.</p>
+						<p class="notes">Since you encrypted this email with Adele's public key, Adele's private key is required to decrypt it. Adele is the only one with her private key, so no one except her &mdash; not even you &mdash; can decrypt it.</p>
+						<p class="notes">It may take two or three minutes for Adele to respond. In the meantime, you might want to skip ahead and check out the <a href="#section5">Use it Well</a> section of this guide.</p>
+						<p>When you receive Adele's email and open it, Enigmail will automatically detect that it is encrypted with your public key, and then it will use your private key to decrypt it.</p>
+						<p>Notice the bar that Enigmail shows you above the message, with information about the status of Adele's key.</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-3c .step -->
+
+<!-- STEP 3D IS COMMENTED OUT UNTIL WE FIND A WAY TO VALIDATE SIGNATURES
+				<div id="step-3d" class="step">
+					<div class="main">
+						<h3><em>Step 3.d</em> Send a test signed email to a friend</h3>
+						<p>Write a new email in your email program, addressed to a friend. If you want, tell them about this guide!</p>
+						<p>Before sending the email, click the icon of the pencil in the bottom right of the composition window (it should turn yellow). This tells Enigmail to sign the email with you private key.</p>
+						<p>After you click send, Enigmail will ask you for your password. It will do this any time it needs to use your public key.</p>
+					</div>
+				</div>-->
+			</div>
+		</section><!-- End #section3 -->
+
+
+<!-- ~~~~~~~~~ Section 4: Learn the Web of Trust  ~~~~~~~~~ -->
+		<section class="row" id="section4">
+			<div>
+					<!-- ~~~~~~~~~ section introduction: interspersed text  ~~~~~~~~~ -->
+				<div class="section-intro">
+						<h2><em>#4</em> Learn the Web of Trust</h2>
+						<p>Email encryption is a powerful technology, but it has a weakness; it requires a way to verify that a person's public key is actually theirs. Otherwise, there would be no way to stop an attacker from making an email address with your friend's name, creating keys to go with it and impersonating your friend.</p>
+
+						<p>That's why the programmers that developed email encryption created keysigning and the Web of Trust. When you sign someone's key, you are publicly saying that you trust that it does belong to them and not an impostor.</p>
+
+<p>People who use your public key can see the number of signatures it has. Once you've used GnuPG for a long time, you may have hundreds of signatures. The Web of Trust is the constellation of GnuPG users, connected to each other by chains of trust expressed through signatures, into a giant Web. The more signatures a key has, and the more signatures its signers' keys have, the more trustworthy that key is.</p>
+
+<p>People's public keys are usually identified by their key ID, which is a short string of digits like 9G6E29F7. You may also see them referred to by their key fingerprint, which is a slightly longer string of digits often prefaced with 0x, like 0x2C1008316F3E89B7.</p>
+
+				</div><!-- End .section-intro -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-4a" class="step">
+					<div class="sidebar">
+						<p><img src="static/img/screenshots/section4-web-of-trust.png" alt="Section 4: Web of Trust" /></p>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3><em>Step 4.a</em> Sign a key</h3>
+						<p>In your email program's menu, go to OpenPGP &rarr; Key Management.</p>
+						<p>Right click on Adele's public key and select Sign Key from the context menu.</p>
+						<p>In the window that pops up, select "I will not answer" and click OK.</p>
+						<p>In your email program's menu, go to OpenPGP &rarr; Key Management &rarr; Keyserver &rarr; Upload Public Keys and hit OK.</p>
+						<p class="notes">You've just effectively said "I trust that Adele's public key actually belongs to Adele." This doesn't mean much because Adele isn't a real person, but it's good practice.</p>
+
+
+						<!--<div id="pgp-pathfinder">
+							<form enctype="application/x-www-form-urlencoded" action="/mk_path.cgi" method="get">
+								<p><strong>From:</strong> <input type="text" placeholder="xD41A008"  name="FROM"></p>
+								<p><strong>To:</strong> <input type="text" placeholder="50BD01x4" name="TO"></p>
+								<p class="buttons"><input type="submit" value="trust paths" name="PATHS"> <input type="reset" value="reset" name=".reset"></p>
+							</form>
+						</div><!-- End #pgp-pathfinder -->
+
+					</div><!-- End .main -->
+				</div><!-- End #step-4a .step -->
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-sign_real_keys" class="step">
+					<div class="main">
+						<h3><em>Important:</em> check people's identification before signing their keys</h3>
+						<p>Before signing a real person's key, always make sure it actually belongs to them, and they are who they say they are. Answer honestly in the window that pops up and asks "How carefully have you verified that the key you are about to sign actually belongs to the person(s) named above?".</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-sign_real_keys .step-->
+
+
+
+			</div>
+		</section><!-- End #section4 -->
+
+<!-- ~~~~~~~~~ Section 5: Use it well  ~~~~~~~~~ -->
+		<section id="section5" class="row">
+			<div>
+					<!-- ~~~~~~~~~ section introduction: interspersed text  ~~~~~~~~~ -->
+				<div class="section-intro">
+						<h2><em>#5</em> Use it well</h2>
+<p>Everyone uses GnuPG a little differently, but it's important to follow some basic practices to keep your email secure. Not following them, you risk the privacy of the people you communicate with, as well as your own, and damage the Web of Trust.</p>
+				</div><!-- End .section-intro -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-5a" class="step">
+					<div class="sidebar">
+						<p><img src="static/img/screenshots/section5-01-use-it-well.png" alt="Section 5: Use it Well" /></p>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3>When should I encrypt?</h3>
+
+						<p>The more you can encrypt your messages, the better. This is because, if you only encrypt emails occasionally, each encrypted message could raise a red flag for surveillance systems. If all or most of your email is encrypted, people doing surveillance won't know where to start.</p>
+
+<p>That's not to say that only encrypting some of your email isn't helpful -- it's a great start and it makes bulk surveillance more difficult.</p>
+					
+					</div><!-- End .main -->
+				</div><!-- End #step-5a .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-5b" class="step">
+					<div class="sidebar">
+						<p><img src="static/img/screenshots/section5-02-use-it-well.png" alt="Section 5: Use it Well" /></p>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3><em>Important:</em> Be wary of invalid keys</h3>
+						<p>GnuPG makes email safer, but it's still important to watch out for invalid keys, which which might have fallen into the wrong hands. Email encrypted with invalid keys might be readable by surveillance programs.</p>
+						<p>In your email program, go back to the second email that Adele sent you. Because it was encrypted with her key, it will have a message from OpenPGP at the top, which most likely says "OpenPGP: Part of this message encrypted."</p>
+<p><b>When using GnuPG, make a habit of glancing at that bar. The program will warn you there if you get an email encrypted with a key that can't be trusted.</b></p>
+					</div><!-- End .main -->
+				</div><!-- End #step-5b .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-5c" class="step">
+					<div class="main">
+						<h3>Copy your revocation certificate to somewhere safe</h3>
+						<p>Remember when you created your keys and saved the revocation cerfiticate that GnuPG made? It's time to copy that cerfiticate onto the safest digital storage that you have -- the ideal thing is a flash drive, disk or hard drive stored in a safe place in your home.</p>
+<p>If your private key ever gets lost or stolen, you'll need this certificate file.</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-5c .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-lost_key" class="step">
+					<div class="main">
+						<h3><em>Important:</em> act swiftly if someone gets your private key</h3>
+						<p>If you lose your private key or someone else gets ahold of it (say, by stealing or cracking your computer), it's important to revoke it immediately before someone else uses it to read your encrypted email. This guide doesn't cover how to revoke a key, but you can follow the <a href="https://www.gnupg.org/gph/en/manual.html#AEN305">instructions on the GnuPG site</a>. After you're done revoking, send an email to everyone with whom you usually use your key to make sure they know.</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-lost_key .step-->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-5d" class="step">
+					<div class="main">
+						<h3>Make it part of your online identity</h3>
+						<p>Start writing your key ID anywhere someone would see your email address. Add it to your email signature, so that anyone corresponding with you knows that they can donwload your public key and verify that it's the correct one. It's also good to post it on your media profile, blog, Website, or business card. (At the Free Software Foundation, we put ours on our <a href="https://fsf.org/about/staff">staff page</a>.)</p><p>We need to get our culture to the point that we feel like something is missing when we see an email address without a public key ID.</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-5d .step-->
+
+
+			</div>
+		</section><!-- End #section5 -->
+
+<!-- ~~~~~~~~~ Section 6: Next steps  ~~~~~~~~~ -->
+		<section class="row" id="section6">
+			<div>
+				<!-- ~~~~~~~~~ section title + graphics  ~~~~~~~~~ -->
+				<div class="section-intro">
+						<h2><em>#6</em> Next steps</h2>
+<p>You've now completed the basics of email encryption with GnuPG, taking action against bulk surveillance. A pat on the back to you! Want to do more to secure privacy for yourself and the people you communicate with?</p>
+				</div><!-- End .section-intro -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-keysigning_party" class="step">
+					<div class="sidebar">
+						<p><img src="static/img/screenshots/section6-next-steps.png" alt="Section 6: Next Steps" /></p>
+					</div><!-- /.sidebar -->
+					<div class="main">
+						<h3>Go to a keysigning party</h3>
+						<p>Keysigning parties are social events designed to build the Web of Trust. Participants match each others' photo IDs and key IDs, and then get out their laptops and sign each other's public keys. They're a great way to meet likeminded people and learn about new privacy tools, as well as build up people's trust in your key. Look for keysignings at tech events, hackerspaces and nerdy parties.</p>
+					</div><!-- End .main -->
+				</div><!-- End #keysigning_party .step -->
+                <!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+                <div id="step-gnulinux" class="step">
+                    <div class="main">
+                        <h3>Switch to GNU/Linux for maximum safety</h3>
+                        <p>Mac OS is a nonfree operating system, which means that no one but Apple gets to see the code it runs on. This makes running Mac OS risky for your privacy -- there's no way to know if it's spying on you.</p><p>To push back hard against surveillance, we recommend you switch to a free software operating system like GNU/Linux. Free operating systems are completely transparent, so anyone can find and remove dangerous code. Learn more about free software at <a href="https://u.fsf.org/ys">fsf.org</a>.</p>
+                    </div><!-- End .main -->
+                </div><!-- End #step-gnulinux .step -->
+
+<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-political" class="step">
+					<div class="main">
+						<h3>Work for political change</h3>
+						<p>Encrypting our email is a powerful direct action, but to change the system, we also have to go to the root. One of the key things needed is <a href="https://www.gnu.org/philosophy/surveillance-vs-democracy.html">reducing the amount of data collected about us in the first place</a>.</p><p>To learn more and participate in efforts for change, join the <a href="https://www.fsf.org/free-software-supporter/subscribe">Free Software Foundation's mailing list.</a></p>
+
+					</div><!-- End .main -->
+				</div><!-- End #step-political .step -->
+
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-more_technologies" class="step">
+					<div class="main">
+						<h3>Protect more of your digital life</h3>
+						<p>Learn surveillance-resistant technologies for instant messages, hard drive storage, online sharing and more at <a href="https://directory.fsf.org/wiki/Collection:Privacy_pack"> the Free Software Directory's Privacy Pack</a> and <a href="https://prism-break.org">prism-break.org</a>.</p>
+					</div><!-- End .main -->
+				</div><!-- End #step-more_technologies .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ -->
+				<div id="step-better" class="step">
+					<div class="main">
+						<h3>Make Email Self-Defense tools even better</h3>
+<p><a href="https://libreplanet.org/wiki/GPG_guide/Public_Review">Leave feedback and suggest improvements to this guide</a>, or email us at <a href="mailto:campaigns@fsf.org">campaigns@fsf.org</a> if you'd like to help maintain or translate it.</p>
+
+						<p>If you like programming, you can contribute code to <a href="https://www.gnupg.org/">GnuPG</a> or <a href="https://www.enigmail.net/home/index.php">Enigmail</a>.</p>
+
+<p>If you can't do any of these, you can always <a href="https://u.fsf.org/7w">donate to the Free Software Foundation</a> so we can get Email Self-Defense into the hands of as many people as possible.</a></p>
+
+					</div><!-- End .main -->
+				</div><!-- End #step-better .step -->
+
+				<!-- ~~~~~~~~~ a div for each step  ~~~~~~~~~ --
+				<div id="step-learn_more" class="step">
+					<div class="main">
+						<h3>Learn more about GnuPG</h3>
+						<p>There are a lot more features of GnuPG to discover, including encrypting files on your computer. There are a variety of resources accessible via Google, but we recommend starting with the links on the <a href="https://www.gnupg.org/documentation/">GnuPG Web site</a>.</p>
+					</div><!-- End .main --
+				</div><!-- End #step-learn_more .step -->
+
+
+			</div>
+		</section><!-- End #section6 -->
+
+<!-- ~~~~~~~~~ FAQ  ~~~~~~~~~ -->
+<!-- When un-commenting this section go to main.css and search
+		for /* Guide Sections Background */ then add #faq to the desired color
+		
+		<section class="row" id="faq">
+			<div>
+				<div class="sidebar">
+					<h2>FAQ</h2>
+				</div>
+
+				<div class="main">
+					<dl>
+						<dt>My key expired</dt>
+							<dd>Answer coming soon.</dd>
+
+						<dt>Who can read encrypted messages? Who can read signed ones?</dt>
+							<dd>Answer coming soon.</dd>
+
+						<dt>My email program is opening at times I don't want it to open/is now my default program and I don't want it to be.</dt>
+							<dd>Answer coming soon.</dd>
+					</dl>
+				</div>
+			</div>
+		</section> --><!-- End #faq -->
+
+<!-- ~~~~~~~~~ Footer  ~~~~~~~~~ -->
+		<footer class="row" id="footer">
+			<div>
+				<div id="copyright">
+					<h4><a href="https://u.fsf.org/ys"><img alt="Free Software Foundation" src="static/img/fsf-logo.png"></a></h4>
+					<p>Copyright &copy; 2014 <a href="https://u.fsf.org/ys">Free Software Foundation</a>, Inc. <a href="https://my.fsf.org/donate/privacypolicy.html">Privacy Policy</a>. <a href="https://u.fsf.org/yr">Join.</a></p>
+					<p>The images on this page are under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 license (or later version)</a>, and the rest of it is under a <a href="https://creativecommons.org/licenses/by-sa/4.0">Creative Commons Attribution-ShareAlike 4.0 license (or later version)</a>. &mdash; <a href="http://www.gnu.org/licenses/license-list.html#OtherLicenses">Why these licenses?</a></p>
+					<p>Fonts used in the guide &amp; infographic: <a href="https://www.google.com/fonts/specimen/Dosis">Dosis</a> by Pablo Impallari, <a href="http://www.google.com/fonts/specimen/Signika">Signika</a> by Anna Giedry&#347; <a href="http://www.google.com/fonts/specimen/Archivo+Narrow">Archivo Narrow</a> by Omnibus-Type, <a href="http://www.thegopherarchive.com/gopher-files-hacks-pxl2000-119351.htm">PXL-2000</a> by Florian Cramer.</p>
+				</div><!-- /#copyright -->
+				<p class="credits">
+					Infographic and guide design by <a rel="external" href="http://jplusplus.org"><strong>Journalism++</strong> <img src="static/img/jplusplus.png" alt="Journalism++" /></a>
+				</p><!-- /.credits -->
+			</div>
+		</footer><!-- End #footer -->
+
+		<script src="static/js/jquery-1.11.0.min.js"></script>
+		<script src="static/js/scripts.js"></script>
+
+                <!-- Piwik -->
+                <script type="text/javascript">
+                 /*
+                 @licstart The following is the entire license notice for the
+                    JavaScript code in this page.
+
+                 Copyright 2014 Matthieu Aubry
+
+                  This program is free software: you can redistribute it and/or modify
+                 it under the terms of the GNU General Public License as published by
+                 the Free Software Foundation, either version 3 of the License, or
+                 (at your option) any later version.
+
+                  This program is distributed in the hope that it will be useful,
+                 but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 GNU General Public License for more details.
+
+                  You should have received a copy of the GNU General Public License
+                 along with this program.  If not, see http://www.gnu.org/licenses/.
+
+                  @licend The above is the entire license notice
+                     for the JavaScript code in this page.
+                 */
+                 var _paq = _paq || [];
+                 _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+                 _paq.push(["setCookieDomain", "*.www.fsf.org"]);
+                 _paq.push(["setDomains", ["*.www.fsf.org","*.www.fsf.org"]]);
+                 _paq.push(["trackPageView"]);
+                 _paq.push(["enableLinkTracking"]);
+
+                 (function() {
+                   var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.fsf.org/";
+                   _paq.push(["setTrackerUrl", u+"piwik.php"]);
+                   _paq.push(["setSiteId", "5"]);
+                   var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+                   g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+                 })();
+                </script>
+                <!-- End Piwik Code -->
+	</body>
+</html>

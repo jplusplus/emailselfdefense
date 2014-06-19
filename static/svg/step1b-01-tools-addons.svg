@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="437.72"
+   id="svg3428"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="step1a-install-wizard.svg">
+  <defs
+     id="defs3430">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3836">
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/ana/Repos/j++/gpg-guide/enc/static/img/screenshots/step1b-tools-addons.png"
+         ry="11.141093"
+         rx="11.141093"
+         y="-281.3519"
+         x="1079.816"
+         height="432.71509"
+         width="594.98328"
+         id="rect3838"
+         style="color:#000000;fill:none;stroke:#2f5faa;stroke-width:5.00099993;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </clipPath>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter6256">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.8491994"
+         id="feGaussianBlur6258" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter6150">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.6176439"
+         id="feGaussianBlur6152" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70872576"
+     inkscape:cx="368.58902"
+     inkscape:cy="157.14286"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1280"
+     inkscape:window-height="727"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3433">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(440,-213.49875)">
+    <g
+       id="g4053"
+       transform="translate(-436.53312,-324.68373)">
+      <g
+         clip-path="url(#clipPath3836)"
+         id="g3774"
+         transform="translate(-1080.7745,822.03683)">
+        <path
+           style="color:#000000;fill:#2a2a2a;fill-opacity:0.54010698;fill-rule:nonzero;stroke:none;stroke-width:3.9519999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter6256);enable-background:accumulate"
+           d="m 1295.9492,-255.99435 334.1043,0 c 0.585,0 1.056,3.39764 1.056,7.61804 l 0,402.22741 c 0,4.2204 -0.471,7.61805 -1.056,7.61805 l -334.1043,0 c -0.5851,0 -1.056,-3.39765 -1.056,-7.61805 l 0,-402.22741 c 0,-4.2204 0.4709,-7.61804 1.056,-7.61804 z"
+           id="rect6254"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sssssssss" />
+        <path
+           sodipodi:nodetypes="cc"
+           style="color:#000000;fill:none;stroke:#4d4d4d;stroke-width:5.00059795;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           d="m 951.35225,-242.41405 842.45285,0"
+           id="path6267"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:connector-curvature="0"
+           style="color:#000000;fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.9519999;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           d="m 967.52022,-281.34375 c -8.71318,0 -15.71875,6.99763 -15.71875,15.71875 l 0,22.71875 839.90623,0 0,-22.71875 c 0,-8.72112 -7.0055,-15.71875 -15.7187,-15.71875 l -808.46878,0 z"
+           id="rect5823" />
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot5859"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           transform="matrix(0.60232294,0,0,0.60232294,935.09149,-265.93503)"><flowRegion
+             id="flowRegion5861"><rect
+               id="rect5863"
+               width="472.63712"
+               height="144.57135"
+               x="77.846115"
+               y="-9.6811934"
+               style="fill:#333333;fill-opacity:1" /></flowRegion><flowPara
+             id="flowPara5865"
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold">File</flowPara></flowRoot>        <flowRoot
+           transform="matrix(0.60232294,0,0,0.60232294,989.84324,-265.93503)"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           id="flowRoot5867"
+           xml:space="preserve"><flowRegion
+             id="flowRegion5869"><rect
+               style="fill:#333333;fill-opacity:1"
+               y="-9.6811934"
+               x="77.846115"
+               height="144.57135"
+               width="472.63712"
+               id="rect5871" /></flowRegion><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5873">Edit</flowPara></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot5875"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           transform="matrix(0.60232294,0,0,0.60232294,1047.7193,-265.93503)"><flowRegion
+             id="flowRegion5877"><rect
+               id="rect5879"
+               width="472.63712"
+               height="144.57135"
+               x="77.846115"
+               y="-9.6811934"
+               style="fill:#333333;fill-opacity:1" /></flowRegion><flowPara
+             id="flowPara5881"
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold">View</flowPara></flowRoot>        <flowRoot
+           transform="matrix(0.60232294,0,0,0.60232294,1159.8749,-265.93503)"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           id="flowRoot5883"
+           xml:space="preserve"><flowRegion
+             id="flowRegion5885"><rect
+               style="fill:#333333;fill-opacity:1"
+               y="-9.6811934"
+               x="77.846115"
+               height="144.57135"
+               width="472.63712"
+               id="rect5887" /></flowRegion><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5889">Message</flowPara></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot5891"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           transform="matrix(0.60232294,0,0,0.60232294,1112.6434,-265.93503)"><flowRegion
+             id="flowRegion5893"><rect
+               id="rect5895"
+               width="472.63712"
+               height="144.57135"
+               x="77.846115"
+               y="-9.6811934"
+               style="fill:#333333;fill-opacity:1" /></flowRegion><flowPara
+             id="flowPara5897"
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold">Go</flowPara></flowRoot>        <rect
+           ry="0.78895169"
+           rx="0.22226232"
+           y="-280.01849"
+           x="1290.8932"
+           height="41.784111"
+           width="70.765999"
+           id="rect6044"
+           style="color:#000000;fill:#2f5faa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.9519999;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot5899"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           transform="matrix(0.60232294,0,0,0.60232294,1259.7569,-265.93503)"><flowRegion
+             id="flowRegion5901"><rect
+               id="rect5903"
+               width="472.63712"
+               height="144.57135"
+               x="77.846115"
+               y="-9.6811934"
+               style="fill:#ffffff;fill-opacity:1" /></flowRegion><flowPara
+             id="flowPara5905"
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold">Tools</flowPara></flowRoot>        <flowRoot
+           transform="matrix(0.60232294,0,0,0.60232294,1328.8643,-265.93503)"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           id="flowRoot5907"
+           xml:space="preserve"><flowRegion
+             id="flowRegion5909"><rect
+               style="fill:#333333;fill-opacity:1"
+               y="-9.6811934"
+               x="77.846115"
+               height="144.57135"
+               width="472.63712"
+               id="rect5911" /></flowRegion><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5913">Help</flowPara></flowRoot>        <rect
+           ry="7.6180449"
+           rx="1.0559903"
+           y="-241.99435"
+           x="1290.8932"
+           height="403.4635"
+           width="336.21628"
+           id="rect5919"
+           style="color:#000000;fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.9519999;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        <rect
+           style="color:#000000;fill:#2f5faa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.9519999;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+           id="rect6046"
+           width="336.21619"
+           height="30.538252"
+           x="1290.8933"
+           y="-161.17297"
+           rx="1.0559901"
+           ry="0.57661164" />
+        <flowRoot
+           transform="matrix(0.60232294,0,0,0.60232294,1260.6102,-218.73031)"
+           style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Titillium Web;-inkscape-font-specification:Titillium Web"
+           id="flowRoot5921"
+           xml:space="preserve"><flowRegion
+             id="flowRegion5923"><rect
+               style="fill:#333333;fill-opacity:1"
+               y="-9.6811934"
+               x="77.846115"
+               height="630.42822"
+               width="530.68195"
+               id="rect5925" /></flowRegion><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5927">Address Book</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5929">Saved Files</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#ffffff;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5931">Add-ons</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5933">Activity Manager</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara5999">Message Filters...</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6005">Run Filters on Folder</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6007">Run Filters on Message</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6009">Run Junk Mail Controls on Folder</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6013">Delete Mail Marked as Junk in Folder</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6017">Import...</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6019">Error Console</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6021">Account Settings...</flowPara><flowPara
+             style="font-size:30.26037788px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:164.99999762%;fill:#333333;fill-opacity:1;font-family:Roboto;-inkscape-font-specification:Roboto Bold"
+             id="flowPara6023">Options</flowPara></flowRoot>        <g
+           id="g6154"
+           transform="matrix(0.37765646,-0.37765646,0.37765646,0.37765646,1036.2173,428.29926)">
+          <path
+             style="color:#000000;fill:#333333;fill-opacity:0.70588235;fill-rule:nonzero;stroke:none;stroke-width:3.9519999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter6150);enable-background:accumulate"
+             d="m 1336.2999,-187.06459 -43.6167,84.48797 c 15.1077,-4.04808 26.1922,-6.4524 36.4226,-7.22891 l 0,42.678415 c 0,4.69368 0.2655,8.480076 0.5909,8.480076 l 13.2414,0 c 0.3253,0 0.5908,-3.786396 0.5908,-8.480076 l 0,-42.678415 c 10.3509,0.76796 21.3746,3.19681 36.4226,7.22891 l -43.6516,-84.48797 z"
+             id="path6124"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path6118"
+             d="m 1336.3017,-180.59019 -39.2187,75.96875 c 13.5843,-3.6399 23.5511,-5.80178 32.75,-6.5 l 0,38.375004 c 0,4.2204 0.2387,7.625 0.5313,7.625 l 11.9062,0 c 0.2925,0 0.5312,-3.4046 0.5312,-7.625 l 0,-38.375004 c 9.3072,0.69053 19.2194,2.87447 32.75,6.5 l -39.25,-75.96875 z"
+             style="color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:3.74470901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+        </g>
+        <g
+           id="g6187"
+           transform="translate(-44.06707,-2.3655312)">
+          <g
+             style="fill:#2f5faa;fill-opacity:1"
+             transform="matrix(1.2653335,0,0,1.2653335,1101.9625,-448.41621)"
+             id="g4898-4">
+            <path
+               sodipodi:type="arc"
+               style="color:#000000;fill:#2f5faa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.95240474;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+               id="path4376-7"
+               sodipodi:cx="546.09467"
+               sodipodi:cy="151.46623"
+               sodipodi:rx="8.549428"
+               sodipodi:ry="8.549428"
+               d="m 554.64409,151.46623 c 0,4.72172 -3.82771,8.54943 -8.54942,8.54943 -4.72172,0 -8.54943,-3.82771 -8.54943,-8.54943 0,-4.72172 3.82771,-8.54943 8.54943,-8.54943 4.72171,0 8.54942,3.82771 8.54942,8.54943 z"
+               transform="matrix(0.7987968,0,0,0.7987968,109.87601,30.475491)" />
+            <path
+               transform="matrix(0.7987968,0,0,0.7987968,91.814177,30.475491)"
+               d="m 554.64409,151.46623 c 0,4.72172 -3.82771,8.54943 -8.54942,8.54943 -4.72172,0 -8.54943,-3.82771 -8.54943,-8.54943 0,-4.72172 3.82771,-8.54943 8.54943,-8.54943 4.72171,0 8.54942,3.82771 8.54942,8.54943 z"
+               sodipodi:ry="8.549428"
+               sodipodi:rx="8.549428"
+               sodipodi:cy="151.46623"
+               sodipodi:cx="546.09467"
+               id="path4378-8"
+               style="color:#000000;fill:#2f5faa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.95240474;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+               sodipodi:type="arc" />
+            <path
+               sodipodi:type="arc"
+               style="color:#000000;fill:#2f5faa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.95240474;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+               id="path4380-9"
+               sodipodi:cx="546.09467"
+               sodipodi:cy="151.46623"
+               sodipodi:rx="8.549428"
+               sodipodi:ry="8.549428"
+               d="m 554.64409,151.46623 c 0,4.72172 -3.82771,8.54943 -8.54942,8.54943 -4.72172,0 -8.54943,-3.82771 -8.54943,-8.54943 0,-4.72172 3.82771,-8.54943 8.54943,-8.54943 4.72171,0 8.54942,3.82771 8.54942,8.54943 z"
+               transform="matrix(0.7987968,0,0,0.7987968,73.752369,30.475491)" />
+          </g>
+        </g>
+      </g>
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/ana/Repos/j++/gpg-guide/enc/static/img/screenshots/step1b-tools-addons.png"
+         ry="11.141093"
+         rx="11.141093"
+         y="540.68494"
+         x="-0.95851332"
+         height="432.71509"
+         width="594.98328"
+         id="rect6296"
+         style="color:#000000;fill:none;stroke:#2f5faa;stroke-width:5.00099993;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </g>
+  </g>
+</svg>
